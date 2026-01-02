@@ -1,0 +1,20 @@
+# The Roblox user or group to upload assets under
+[creator]
+type = "group" # Can be "user" or "group"
+id = 1234567   # Your Roblox User/Group ID
+
+# Options for generating Luau or TypeScript code
+[codegen]
+typescript = true      # Generate a .d.ts file for TypeScript users
+style = "nested"       # Use "flat" (default) or "nested" for asset access paths
+strip_extension = true # Remove file extensions (e.g., .png) from generated names
+
+# Map local files to sync
+[inputs.images]
+path = "assets/images/**/*.png" # Glob pattern for local files
+output_path = "src/assets/images.luau"
+bleed = true # Enable alpha bleeding for crisp edges
+
+[inputs.audio]
+path = "assets/sounds/*.mp3"
+output_path = "src/assets/sounds.luau"
